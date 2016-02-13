@@ -36,13 +36,13 @@ class LoginTest(FunctionalTest):
             'authentication_email'
         ).send_keys('edith@mockmyid.com')
 
-        self.browser.find_elements_by_tag_name('button').click()
+        self.browser.find_element_by_tag_name('button').click()
 
         # The Persona window closes
         self.switch_to_new_window('To-Do')
 
         # She can see that shee is logged in
-        self.wait_for_element_with_id('logout')
-        navbar = self.browser.find_elements_by_css_selector('.navbar')
+        self.wait_for_element_with_id('id_logout')
+        navbar = self.browser.find_element_by_css_selector('.navbar')
         self.assertIn('edith@mockmyid.com', navbar.text)
         
