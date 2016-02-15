@@ -10,7 +10,7 @@ class FunctionalTest(StaticLiveServerTestCase):
     def setUpClass(cls):
         for arg in sys.argv:
             if 'liveserver' in arg:
-                cls.server_host = 'http://' + arg.split('=')[1]
+                cls.server_host = arg.split('=')[1]
                 cls.server_url = 'http://' + cls.server_host
                 cls.against_staging = True
                 return
